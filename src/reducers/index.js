@@ -1,17 +1,13 @@
-const questionsReducer = (store = [{
-  "id": 0,
-  "question_type": "multiple_choice",
-  "question": "Input question here",
-  "choices": [
-    "Answer One",
-    "Answer Two",
-    "Answer Three",
-    "Answer Four"
-  ]
-}], action) => {
+import { CREATE_NEW_QUESTION } from '../constants';
+
+const questionsReducer = (state = [], action) => {
   switch(action.type) {
+    case CREATE_NEW_QUESTION:
+      
+      return state = [...state, action.data]; 
+
     default:
-    return store;
+    return state;
   }
 }
 

@@ -11,10 +11,8 @@ const store = createStore(questionsReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-   <App>
-   { console.log(store.getState()) }  
-   </App> 
-   {/* <App /> */}
+ 
+   <App />
   </Provider>, 
   document.getElementById('root')
 );
