@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { CREATE_NEW_QUESTION } from '../constants';
 import { createNewQuestion } from '../actions';
-import '../css/app.css';
+import '../css/app.scss';
+
+import Selection from './Selection';
+import FormHolder from './FormHolder';
 
 class App extends Component {
 
@@ -12,10 +15,13 @@ class App extends Component {
       type: CREATE_NEW_QUESTION,
       data: {
         "id": Math.floor(Math.random() * 9999),
-        "question_type": "short_text",
-        "question": "Input question here"
+        "": "short_text",
+        "question": "Input question here",
+        required: false
       }
     })
+
+
   }
 
   componentDidMount = (data) => {
@@ -26,16 +32,26 @@ class App extends Component {
     return (
       <div className="ui container App">
         <h1 className="ui header dividing">Form Assessment Builder</h1>
-        <button onClick={this.handleClick}>CLICK ME</button>
+        <div className="ui grid">
+          <div className="three wide column">
+            <Selection />
+            <button onClick={this.handleClick}>CLICK ME</button>
+          </div>
+
+          <div className="thirteen wide column">
+            <FormHolder />
+          </div>          
+        </div>
+
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state);
+  
 
-  return { questions: state };
+  return { question: state.currentQuestionType };
 }
 
 export default connect(mapStateToProps,
