@@ -29,9 +29,8 @@ class FormHolder extends Component {
             <p>Lorem ipsum text stuff.</p>
           </li>
         </ul>
-        <form onSubmit={this.handleSubmit}>
-          {this.returnQuestion(this.props.questionType)}
-          {/* <MultiForm /> */}
+        <form onSubmit={this.handleSubmit}>         
+          {this.returnQuestion(this.props.question.questionType)}
         </form>
       </React.Fragment>
     )
@@ -39,7 +38,7 @@ class FormHolder extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { questionType: state.questionType }
+  return { question: state.question }
 }
 
 export default connect(mapStateToProps)(FormHolder);

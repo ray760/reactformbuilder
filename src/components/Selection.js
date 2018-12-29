@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import QuestionBtn from './QuestionBtn';
+import Switch from './Switch';
 import { CREATE_NEW_QUESTION } from '../constants';
-import { createNewQuestion } from '../actions';
 
 class Selection extends Component {
 
@@ -23,21 +23,28 @@ class Selection extends Component {
   render() {
 
     return (
-      <div className="ui list">
-        <QuestionBtn questionType="multiple_choice" question="Multiple Choice" />
-        <QuestionBtn questionType="short_text" question="Short Text" />
-        <QuestionBtn questionType="long_text" question="Long Text" />
-      </div>
+      <React.Fragment>
+        <div className="ui list">
+          <QuestionBtn questionType="multiple_choice" question="Multiple Choice" />
+          <QuestionBtn questionType="short_text" question="Short Text" />
+          <QuestionBtn questionType="long_text" question="Long Text" />
+        </div>
+
+        <Switch class="required" />
+        <Switch class="description" />
+      </React.Fragment>
     )
   }
 }
 
-const mapStateToProps = (state) => {
-  //console.clear();
-  //console.log(state);
-
-  return { questions: state };
+/* const mapStateToProps = (state) => {
+  return { question: state };
 }
 
-export default connect(mapStateToProps,
-  {createNewQuestion})(Selection);
+const mapDispatchToProps = (dispatch) => {
+  return { 
+    dispatch
+  }
+} */
+
+export default connect()(Selection);

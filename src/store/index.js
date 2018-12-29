@@ -14,7 +14,11 @@ import reducers from '../reducers';
         description: String
       }
     ],
-    questionType: String
+    // Set in questionTypeReducer.js //
+    question: {
+      questionType: String,
+      required: Boolean,
+      description: Boolean
     }
   }
 

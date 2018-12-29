@@ -16,7 +16,10 @@ export class MultiForm extends Component{
 export class ShortForm extends Component {
   render() {
     return (
-      <b>SHORT QUESTION</b>
+      <div>
+        <input required type="text" ref={this.editTitle} placeholder="A short text question" /> <br /><br />
+        <textarea required rows="5" ref={this.editMessage} cols="28" placeholder="Enter Post" />
+      </div>
     )
   }
 }
@@ -25,7 +28,10 @@ export class ShortForm extends Component {
 export class LongForm extends Component {
   render() {
     return (
-      <b>LONG QUESTION</b>
+      <div>
+        <input required type="text" ref={this.editTitle} placeholder="A long text question" /> <br /><br />
+        <textarea required rows="5" ref={this.editMessage} placeholder="Write your description here" />
+      </div>
     )
   }
 }

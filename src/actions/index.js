@@ -1,9 +1,10 @@
 import { CREATE_NEW_QUESTION, QUESTION_TYPE } from '../constants';
 
-export const questionType = (questionType) => {
+export const question = (data) => {
+  //console.log('ACTION: ',data)
   return {
     type: QUESTION_TYPE,
-    questionType
+    data
   }
 }
 
