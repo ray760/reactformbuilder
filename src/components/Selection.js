@@ -12,7 +12,7 @@ class Selection extends Component {
       type: CREATE_NEW_QUESTION,
       data: {
         "id": Math.floor(Math.random() * 9999),
-        "": "short_text",
+        "questionType": "short_text",
         "question": "Input question here"
       }
     })

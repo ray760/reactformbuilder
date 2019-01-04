@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { MultiForm, ShortForm, LongForm } from './Questions';
+import MultiForm from './MultiForm';
+import ShortForm from './ShortForm';
+import LongForm from './LongForm';
 
 class FormHolder extends Component {
   
