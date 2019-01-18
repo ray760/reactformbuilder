@@ -1,14 +1,20 @@
+import { QUESTION_TYPE } from '../constants';
+
 const initialState = {
   questionType: '',
+  question: '',
+  description: null,
   required: false,
-  description: false
+  showDescription: false
 }
 
 const questionType = (state = initialState, action) => {
-  //console.log('REDUCER: ', {...action.data});
   switch(action.type) {
-    case 'QUESTION_TYPE':
+    case QUESTION_TYPE:
       return { ...state, ...action.data };
+
+    case 'RESET':
+      return { ...state, ...initialState }  
 
     default:
       return state;

@@ -28,10 +28,9 @@ class Selection extends Component {
           <QuestionBtn questionType="multiple_choice" question="Multiple Choice" />
           <QuestionBtn questionType="short_text" question="Short Text" />
           <QuestionBtn questionType="long_text" question="Long Text" />
+          <Switch class="required" />
+          <Switch class="showDescription" />
         </div>
-
-        <Switch class="required" />
-        <Switch class="description" />
       </React.Fragment>
     )
   }

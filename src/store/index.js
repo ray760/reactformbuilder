@@ -8,17 +8,19 @@ import reducers from '../reducers';
     questions: [
       {
         id: number,
-        : String,
-        question: String,
+        questionType: String,
         required: Boolean,
         description: String
+        question: String,
       }
     ],
     // Set in questionTypeReducer.js //
     question: {
       questionType: String,
       required: Boolean,
-      description: Boolean
+      showDescription: Boolean,
+      question: String,
+      description: String
     }
   }
 

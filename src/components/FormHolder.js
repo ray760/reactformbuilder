@@ -31,9 +31,10 @@ class FormHolder extends Component {
             <p>Lorem ipsum text stuff.</p>
           </li>
         </ul>
-        <form onSubmit={this.handleSubmit}>         
+        {/* <form onSubmit={this.handleSubmit}> */}         
           {this.returnQuestion(this.props.question.questionType)}
-        </form>
+          {/* <input type="submit" value="Post"/> */}
+        {/* </form> */}
       </React.Fragment>
     )
   }

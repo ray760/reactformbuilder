@@ -10,10 +10,13 @@ const Switch = (props) => {
   }
 
   return (
-    <label className="switch">
-        <input onChange={handleSwitch} type="checkbox" className={props.class} readOnly="" tabIndex="0"/>
-        <span className="slider round"></span>
-    </label>
+    <div className="item">
+      <label className="switch">
+        <b style={{display: 'block'}}>{ props.class }</b>
+          <input onChange={handleSwitch} type="checkbox" className={props.class} readOnly="" tabIndex="0"/>
+          <span className="slider round"></span>
+      </label>
+    </div>
   )
 }
 
