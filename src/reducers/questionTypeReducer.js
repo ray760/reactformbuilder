@@ -1,4 +1,4 @@
-import { QUESTION_TYPE } from '../constants';
+import { CREATE_NEW_QUESTION } from '../constants';
 
 const initialState = {
   questionType: '',
@@ -8,9 +8,9 @@ const initialState = {
   showDescription: false
 }
 
-const questionType = (state = initialState, action) => {
+const createNewQuestionType = (state = initialState, action) => {
   switch(action.type) {
-    case QUESTION_TYPE:
+    case CREATE_NEW_QUESTION:
       return { ...state, ...action.data };
 
     case 'RESET':
@@ -21,4 +21,4 @@ const questionType = (state = initialState, action) => {
   }  
 }
 
-export default questionType;
+export default createNewQuestionType;

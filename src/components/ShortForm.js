@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { createNewQuestion, reset } from '../actions';
+import { addNewQuestion, createNewQuestion, reset } from '../actions';
 
 /* Short question question form */
 class ShortForm extends Component {
@@ -60,7 +60,8 @@ const mapDispatchToProps = (dispatch) => {
   return {
     dispatch,
     addQuestion: (data) => {
-      dispatch(createNewQuestion(data));
+      dispatch(addNewQuestion(data));
+      //dispatch(createNewQuestion(data));
     },
     resetQuestion: () => {
       dispatch(reset())

@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { question } from '../actions';
+import { createNewQuestion } from '../actions';
 
 const Switch = (props) => {
   const handleSwitch = (e) => {
@@ -29,7 +29,7 @@ const mapDispatchToProps = (dispatch) => {
   return { 
     dispatch,
     isRequired: (checked, key) => {
-      dispatch(question({ [key]: checked }))
+      dispatch(createNewQuestion({ [key]: checked }))
     }
   };
 }

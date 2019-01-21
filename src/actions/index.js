@@ -1,8 +1,9 @@
-import { CREATE_NEW_QUESTION, QUESTION_TYPE } from '../constants';
+import questions from '../apis/questions'
+import { CREATE_NEW_QUESTION } from '../constants';
 
-export const question = (data) => {
+export const createNewQuestion = (data) => {
   return {
-    type: QUESTION_TYPE,
+    type: CREATE_NEW_QUESTION,
     data
   }
 }
@@ -13,9 +14,11 @@ export const reset = () => {
   }
 }
 
-export const createNewQuestion = (data) => {
-  return {
-    type: CREATE_NEW_QUESTION,
-    data
+export const addNewQuestion = (question) => {
+
+  return async (dispatch) => {
+    const response = await questions.post('/questions', question);
+
+    //dispatch({type: CREATE_NEW_QUESTION , data: response.data});
   }
 }

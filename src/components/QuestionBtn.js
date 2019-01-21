@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { question } from '../actions';
+import { createNewQuestion } from '../actions';
 
 const QuestionBtn = (props) => {
 
   const handleClick = (e) => {
-    props.dispatch(question({questionType: props.questionType}));
+    props.dispatch(createNewQuestion({questionType: props.questionType}));
   }
 
   return (
