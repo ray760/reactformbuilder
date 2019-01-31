@@ -1,11 +1,25 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { fetchQuestions } from '../actions';
 import MultiForm from './MultiForm';
 import ShortForm from './ShortForm';
 import LongForm from './LongForm';
 
 class FormHolder extends Component {
-  
+  state = {
+    hasError: false
+  };
+
+  static getDerivedStateFromError(error) {
+    // Update state so the next render will show the fallback UI.
+    return { hasError: true };
+  }
+
+  componentDidCatch(error, info) {
+    // You can also log the error to an error reporting service
+    //logErrorToMyService(error, info);
+  }
+
   returnQuestion = (q) => {
     switch(q) {
       case 'multiple_choice':
@@ -18,30 +32,55 @@ class FormHolder extends Component {
         return <LongForm />
 
       default:
-        return <b>SELECT QUESTION TYPE</b>
+        return <b>CHOOSE QUESTION TYPE TO CREATE.</b>
     }
+  }
+
+  componentDidUpdate = () => {
+    console.log('COMPONENT UPDATE')
+  }
+
+  componentDidMount = () => {
+    console.log('COMPONENT MOUNTED')
+    this.props.dispatch(fetchQuestions())
+
   }
 
   render() {
     return (
       <React.Fragment>
-        <ul>
-          <li>
-            <h6>Title</h6>
-            <p>Lorem ipsum text stuff.</p>
-          </li>
+        {/* Pulls in question type component */}
+        {this.returnQuestion(this.props.question.questionType)}
+        
+        {/* Builds list of created questions */}
+        
+        <ul className="ui celled">
+
+          { this.props.questions.map( item => 
+            <li className="item" key={item.id}>
+              <h6>{item.question}</h6>
+              <p>{item.description}</p>              
+            </li>
+          )}
+
         </ul>
-        {/* <form onSubmit={this.handleSubmit}> */}         
-          {this.returnQuestion(this.props.question.questionType)}
-          {/* <input type="submit" value="Post"/> */}
-        {/* </form> */}
+         
       </React.Fragment>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return { question: state.question }
+  return { 
+    question: state.question,
+    questions: state.questions
+   }
 }
 
-export default connect(mapStateToProps)(FormHolder);
+const mapDispatchToProps = (dispatch) => {
+  return {
+    dispatch
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(FormHolder);

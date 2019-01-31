@@ -6,6 +6,12 @@ button.basic {
   width: 140px;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Removes border and expands width of form elements */
 form {
   input,

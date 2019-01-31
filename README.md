@@ -1,6 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## React Form Builder
+
+This is a React\Redux project built using Create-React-App I'm using as a personal project to use as a playground for all things React\Redux. This is an alwways work in progress project which allows me to try out new React features and stay up to date. Checkout the [Tello](https://trello.com/b/N5apy8CX/react-form-builder-project) board to track progress. 
+
+### What's it do and how does it work?
+
+1. Choose a question type.
+2. Choose whether to add a description and if it's required.
+3. Click post to add it to the JSON-Server
 
 In the project directory, you can run:
 
@@ -11,6 +19,11 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 The page will reload if you make edits.<br>
 You will also see any lint errors in the console.
+
+### `npm run server`
+
+Starts JSON-Server api.
+Open [http://localhost:3001](http://localhost:3001) to view JSON API data.
 
 ### `npm test`
 
@@ -26,19 +39,3 @@ The build is minified and the filenames include the hashes.<br>
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
