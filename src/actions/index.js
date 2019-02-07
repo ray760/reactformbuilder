@@ -4,8 +4,7 @@ import questions from '../apis/questions'
   DELETE_QUESTION,
   EDIT_QUESTION,
   FETCH_QUESTION,
-  FETCH_QUESTIONS,
-  POST_NEW_QUESTION
+  FETCH_QUESTIONS
  } from '../constants';
 
 /* This action is used to store state of current
@@ -30,8 +29,9 @@ export const reset = () => {
 */
 export const addNewQuestion = (question) => {
   return async (dispatch) => {
-    const posted = await (questions.post('/questions', question));
-    //dispatch({type: POST_NEW_QUESTION , data: response.data});
+    const postQuestion = await (questions.post('/questions', question));
+    const response = await questions.get('/questions');
+    dispatch({ type: FETCH_QUESTIONS, data: response.data });
   }
 }
 

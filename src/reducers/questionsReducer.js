@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import { removeDuplicates } from '../helper-functions/helpers';
 
 import { 
   DELETE_QUESTION,
@@ -11,7 +12,7 @@ import {
 const questionsReducer = (state = [], action) => {
   switch(action.type) {
     case POST_NEW_QUESTION:
-      return { ...state, [action.data.id]: action.data }; 
+      return removeDuplicates([...state, ...action.data], 'id'); 
 
     case DELETE_QUESTION:
       return _.omit(state, action.payload)
@@ -20,7 +21,7 @@ const questionsReducer = (state = [], action) => {
       return { ...state, [action.data.id]: action.data };      
 
     case FETCH_QUESTIONS:
-      return [...state, ...action.data];
+    return removeDuplicates([...state, ...action.data], 'id');
 
     case FETCH_QUESTION:
       return { ...state, [action.data.id]: action.data };

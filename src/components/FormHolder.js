@@ -37,13 +37,11 @@ class FormHolder extends Component {
   }
 
   componentDidUpdate = () => {
-    console.log('COMPONENT UPDATE')
+    //console.log('COMPONENT UPDATE')
   }
 
   componentDidMount = () => {
-    console.log('COMPONENT MOUNTED')
     this.props.dispatch(fetchQuestions())
-
   }
 
   render() {
